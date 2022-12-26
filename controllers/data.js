@@ -2,7 +2,7 @@ const { StatusCodes } = require('http-status-codes');
 const sequelize = require('../db/connect');
 
 const getLongestDurationMovies = async (req, res) => {
-	// No try and catch required as using not-found middleware
+	// No try and catch required as I amusing not-found middleware
 	const data = await sequelize.query(
 		`SELECT tconst,primaryTitle,runTimeMinutes,genres FROM movies ORDER BY runTimeMinutes DESC LIMIT 10`
 	);
